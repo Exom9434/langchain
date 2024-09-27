@@ -14,7 +14,7 @@ prompt = PromptTemplate(  #← PromptTemplate 준비
 )
 
 few_shot_prompt = FewShotPromptTemplate(  #← FewShotPromptTemplate 준비
-    examples=examples,  #← 입력 예와 출력 예를 정의
+    examples=examples,  #← 입력 예와 출력 예를 정의, exmple_prompt에서 사용
     example_prompt=prompt,  #← FewShotPromptTemplate에 PromptTemplate를 전달
     prefix="아래 문장부호가 빠진 입력에 문장부호를 추가하세요. 추가할 수 있는 문장부호는 ',', '.'입니다. 다른 문장부호는 추가하지 마세요.",  #← 지시어 추가하기
     suffix="입력: {input_string}\n출력:",  #← 출력 예의 입력 변수를 정의

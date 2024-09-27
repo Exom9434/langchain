@@ -4,7 +4,7 @@ from langchain.cache import InMemoryCache  #← InMemoryCache 가져오기
 from langchain.chat_models import ChatOpenAI
 from langchain.schema import HumanMessage
 
-langchain.llm_cache = InMemoryCache() #← llm_cache에 InMemoryCache 설정
+langchain.llm_cache = InMemoryCache() #← llm_cache에 InMemoryCache 설정, 따로 설정하지 않으면 캐시 x
 
 chat = ChatOpenAI()
 start = time.time() #← 실행 시작 시간 기록

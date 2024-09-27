@@ -3,14 +3,14 @@ from langchain.output_parsers import \
     CommaSeparatedListOutputParser  #← Output Parser인 CommaSeparatedListOutputParser를 가져옵니다.
 from langchain.schema import HumanMessage
 
-output_parser = CommaSeparatedListOutputParser() #← CommaSeparatedListOutputParser 초기화
+output_parser = CommaSeparatedListOutputParser() #← CommaSeparatedListOutputParser 초기화,
 
 chat = ChatOpenAI(model="gpt-3.5-turbo", )
 
 result = chat(
     [
-        HumanMessage(content="애플이 개발한 대표적인 제품 3개를 알려주세요"),
-        HumanMessage(content=output_parser.get_format_instructions()),  #← output_parser.get_format_instructions()를 실행하여 언어모델에 지시사항 추가하기
+        HumanMessage(content="애플이 개발한 대표적인 제품 3개를 알려주세요"), #질문을 모델에 전달
+        HumanMessage(content=output_parser.get_format_instructions()),  #쉼표로 구분된 목록으로 출력하도록 모델에 전달
     ]
 )
 
